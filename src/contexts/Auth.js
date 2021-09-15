@@ -1,7 +1,9 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import AsyncStorage from "@react-native-community/async-storage";
+// import AsyncStorage from "@react-native-community/async-storage";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { AuthData, authService } from "../services/authService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 // type AuthContextData = {
 //   authData?: AuthData;
 //   loading: boolean;
