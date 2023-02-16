@@ -1,8 +1,10 @@
 import React from "react";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import Constants from "expo-constants";
 import AppText from "../../components/AppText";
 import { Form, FormButton, FormField } from "../../components/forms";
+import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
+import { RegisterationSchema } from "../../utils/validations";
 
 export default function RegisterScreen() {
   return (
@@ -10,41 +12,27 @@ export default function RegisterScreen() {
       style={styles.bg}
       source={require("../../../assets/bg/guest-bg.png")}
     >
+      <ExpoStatusBar style="auto" translucent />
       <AppText> </AppText>
 
       <Form
         initialValues={{
           email: "",
           password: "",
-          first_name: "",
-          last_name: "",
-          code: "",
+          confirm_password: "",
+          username: "",
         }}
-        // validationSchema={validationSchema}
+        validationSchema={RegisterationSchema}
         onSubmit={(values) => {
-          values["username"] = randomWords({
-            exactly: 1,
-            wordsPerString: 2,
-            separator: "-",
-          })[0];
-          values["accept_terms"] = true;
           signUp(values);
         }}
       >
-        <View style={styles.row}>
-          <FormField
-            autoFocus
-            placeholder="Ciroma"
-            label="First Name"
-            name="first_name"
-            icon="user"
-          />
-          <FormField
-            placeholder="Adekunle"
-            label="Last Name"
-            name="last_name"
-          />
-        </View>
+        <Image
+          source={require("../../../assets/brand/bambi-logo.png")}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <FormField placeholder="Username" name="username" icon="person" />
         <FormField
           placeholder="ciroma.adekunle@mail.com"
           label="Email Address"
@@ -53,20 +41,27 @@ export default function RegisterScreen() {
         />
 
         <FormField
-          placeholder="Create a password"
+          placeholder="Password"
           name="password"
           label="Password"
           icon="lock"
           password
         />
-
         <FormField
-          placeholder="eg: 500087"
-          label="Referrer code (optional)"
-          name="code"
+          placeholder="Confirm Password"
+          name="confirm_password"
+          label="Password"
+          icon="lock"
+          password
         />
 
-        <FormButton title="Sign up" />
+        <View
+          style={{
+            marginTop: 50,
+          }}
+        >
+          <FormButton title="Sign up" />
+        </View>
       </Form>
     </ImageBackground>
   );
@@ -79,5 +74,12 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingTop: Constants.statusBarHeight,
     justifyContent: "center",
+  },
+  logo: {
+    justifyContent: "center",
+    alignSelf: "center",
+    marginVertical: 30,
+    width: 190,
+    height: 40,
   },
 });

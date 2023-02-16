@@ -1,4 +1,4 @@
-import Feather from "@expo/vector-icons/Feather";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
@@ -26,10 +26,10 @@ export default function AppTextInput({
       ) : null}
       <View style={[styles.inputContainer, customStyle]}>
         {icon && (
-          <Feather
+          <Ionicons
             name={icon}
             size={20}
-            color={colors.primary}
+            color={colors.white}
             style={{ marginRight: 5 }}
           />
         )}
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
   inputBox: {
     width: "95%",
     fontSize: 14,
+    color: colors.white,
   },
   container: {
     marginVertical: 5,

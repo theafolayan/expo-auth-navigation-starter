@@ -27,7 +27,7 @@ export default function AppPasswordInput({
         <TextInput
           style={[styles.inputBox, style]}
           placeholder={placeholder}
-          placeholderTextColor={colors.grey}
+          placeholderTextColor={colors.white}
           autoCapitalize="none"
           autoCorrect={false}
           secureTextEntry={secureTextEntry}
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   inputBox: {
     width: "85%",
     fontSize: 14,
+    color: colors.white,
   },
   container: {
     marginVertical: 5,
