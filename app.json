@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "expo-auth-navigation-starter",
-    "slug": "expo-auth-navigation-starter",
+    "name": "Bambi",
+    "slug": "bambi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/brand/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#4E51BF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
