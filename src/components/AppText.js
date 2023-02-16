@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   red: { color: colors.red },
   bold: {
-    // fontFamily: 'SpaceGrotesk_700Bold',
+    fontWeight: "bold",
     color: colors.primary,
   },
   dark: {

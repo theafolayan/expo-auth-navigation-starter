@@ -22,9 +22,7 @@ export default function AppPasswordInput({
     <View style={[styles.container, half && styles.half]}>
       {error && errorVisible ? (
         <ErrorMessage error={error} visible={errorVisible} />
-      ) : (
-        <AppText>{label}</AppText>
-      )}
+      ) : null}
       <View style={styles.inputContainer}>
         <TextInput
           style={[styles.inputBox, style]}
