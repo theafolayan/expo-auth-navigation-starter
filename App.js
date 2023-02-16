@@ -9,10 +9,6 @@ export default function App() {
     <AuthProvider>
       <Router />
     </AuthProvider>
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your new app!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
   );
 }
 
