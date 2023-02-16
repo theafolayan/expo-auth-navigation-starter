@@ -14,8 +14,10 @@ import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import { RegisterationSchema } from "../../utils/validations";
 import { Loading } from "../../components/Loading";
 import user from "../../services/user";
+import { useAuth } from "../../contexts/Auth";
 
 export default function RegisterScreen() {
+  const auth = useAuth();
   const [loading, isLoading] = useState(false);
   // isLoading(false);
 
@@ -24,6 +26,7 @@ export default function RegisterScreen() {
       isLoading(true);
       values["guardian_id"] = "XeXn9FV5d";
       values["firstname"] = "Test";
+      values["gender"] = "male";
       values["middlename"] = "Middle";
       values["lastname"] = "User";
       values["phone_number"] = "08106924812";
@@ -35,7 +38,7 @@ export default function RegisterScreen() {
         await setError(loginError[Object.keys(loginError)[0]][0]);
       }
       if (registerCall.ok) {
-        auth.signIn(registerCall.data.authentication);
+        auth.signIn(registerCall.data);
       }
     } catch (error) {
       console.log(error);
@@ -65,13 +68,13 @@ export default function RegisterScreen() {
           signUp(values);
         }}
       >
-        <TouchableOpacity onPress={() => signUp({})}>
-          <Image
-            source={require("../../../assets/brand/bambi-logo.png")}
-            style={styles.logo}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
+        {/* <TouchableOpacity onPress={() => signUp({})}> */}
+        <Image
+          source={require("../../../assets/brand/bambi-logo.png")}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        {/* </TouchableOpacity> */}
         <FormField placeholder="Username" name="username" icon="person" />
         <FormField
           placeholder="ciroma.adekunle@mail.com"
