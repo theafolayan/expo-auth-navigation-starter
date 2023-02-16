@@ -2,6 +2,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
+// TODO: Add DatePicker
+
 import colors from "../../constants/colors";
 import AppText from "../AppText";
 import ErrorMessage from "./ErrorMessage";

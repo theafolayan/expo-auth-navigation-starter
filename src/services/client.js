@@ -12,6 +12,7 @@ apiClient.addAsyncRequestTransform(async (request) => {
   if (!authToken) return;
   // console.log(authToken);
   request.headers["Authorization"] = `Bearer ${authToken}`;
+  request.headers["Accept"] = `application/json`;
 });
 
 export default apiClient;

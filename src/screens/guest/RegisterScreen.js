@@ -1,17 +1,55 @@
-import React from "react";
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import Constants from "expo-constants";
 import AppText from "../../components/AppText";
 import { Form, FormButton, FormField } from "../../components/forms";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import { RegisterationSchema } from "../../utils/validations";
+import { Loading } from "../../components/Loading";
+import user from "../../services/user";
 
 export default function RegisterScreen() {
+  const [loading, isLoading] = useState(false);
+  // isLoading(false);
+
+  const signUp = async (values) => {
+    try {
+      isLoading(true);
+      values["guardian_id"] = "XeXn9FV5d";
+      values["firstname"] = "Test";
+      values["middlename"] = "Middle";
+      values["lastname"] = "User";
+      values["phone_number"] = "08106924812";
+      values["dob"] = "24/25/2004";
+      const registerCall = await user.signUp(values);
+      console.log(registerCall.data);
+      if (registerCall.problem) {
+        const loginError = registerCall.data["errors"];
+        await setError(loginError[Object.keys(loginError)[0]][0]);
+      }
+      if (registerCall.ok) {
+        auth.signIn(registerCall.data.authentication);
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      isLoading(false);
+    }
+  };
+
   return (
     <ImageBackground
       style={styles.bg}
       source={require("../../../assets/bg/guest-bg.png")}
     >
+      {/* {isLoading && <Loading />} */}
       <ExpoStatusBar style="auto" translucent />
       <AppText> </AppText>
 
@@ -27,11 +65,13 @@ export default function RegisterScreen() {
           signUp(values);
         }}
       >
-        <Image
-          source={require("../../../assets/brand/bambi-logo.png")}
-          style={styles.logo}
-          resizeMode="contain"
-        />
+        <TouchableOpacity onPress={() => signUp({})}>
+          <Image
+            source={require("../../../assets/brand/bambi-logo.png")}
+            style={styles.logo}
+            resizeMode="contain"
+          />
+        </TouchableOpacity>
         <FormField placeholder="Username" name="username" icon="person" />
         <FormField
           placeholder="ciroma.adekunle@mail.com"

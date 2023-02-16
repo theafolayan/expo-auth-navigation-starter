@@ -4,7 +4,11 @@ import client from "./client";
 const endpoint = "/user";
 
 const registerUser = (values) => {
-  return client.put(`${endpoint}/register/`, values);
+  return client.post(`${endpoint}/register/`, values);
+};
+
+const signUp = (values) => {
+  return client.post(`${endpoint}/register/`, values);
 };
 
 const loginUser = (values) => {
@@ -14,4 +18,5 @@ const loginUser = (values) => {
 export default {
   registerUser,
   loginUser,
+  signUp,
 };
