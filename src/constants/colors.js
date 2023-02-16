@@ -1,0 +1,25 @@
+const colors = {
+  primary: "#4E51BF",
+  secondary: "#FF92A4",
+  white: "#FEFEFD",
+  dark: "#383838",
+  red: "#F52A2A",
+  lightRed: "#FF848480",
+  orange: "orange",
+  yellow: "#FED325",
+  lightYellow: "#FFEFAD",
+  chatYellow: "#FFF4C6",
+  light: "#F1F1F1",
+  green: "#57E69E",
+  green700: "#1AB265",
+  lightGreen: "#CCFFE5",
+  purple100: "#F5F6F8",
+  black: "#000",
+  lightPurple: "#DFE2FF",
+  grey: "grey",
+  grey200: "#EAECF0",
+  grey300: "#D0D5DD",
+  grey500: "#667085",
+};
+
+export default colors;
