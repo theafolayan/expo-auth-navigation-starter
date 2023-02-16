@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
 
   big: {
-    fontSize: 24,
+    fontSize: 20,
   },
   colored: {
     color: colors.primary,

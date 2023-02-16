@@ -5,6 +5,8 @@ import { useAuth } from "../../contexts/Auth";
 import Constants from "expo-constants";
 import AppText from "../../components/AppText";
 import WalletBalance from "../../components/home/WalletBalance";
+import Greeting from "../../components/home/Greeting";
+import colors from "../../constants/colors";
 
 export default function HomeScreen() {
   const auth = useAuth();
@@ -13,6 +15,7 @@ export default function HomeScreen() {
   };
   return (
     <View style={styles.container}>
+      <Greeting />
       <WalletBalance />
       <AppText bold dark>
         Assigned Tasks
@@ -31,6 +34,6 @@ const styles = StyleSheet.create({
     // justifyContent: "center",
     paddingHorizontal: 20,
     // alignItems: "center",
-    // backgroundColor: "#d1d1d1",
+    backgroundColor: colors.white,
   },
 });
