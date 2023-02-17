@@ -61,11 +61,11 @@ export default function AppText({
 
 const styles = StyleSheet.create({
   text: {
-    // fontFamily: 'PlusJakarta',
     paddingHorizontal: 5,
     paddingVertical: 2,
     color: "#667085",
     fontSize: 14,
+    fontWeight: "400",
   },
 
   big: {
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   red: { color: colors.red },
   bold: {
-    fontWeight: "bold",
+    fontWeight: "700",
     color: colors.primary,
   },
   dark: {

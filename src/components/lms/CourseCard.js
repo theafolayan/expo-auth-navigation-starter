@@ -15,6 +15,7 @@ export default function CourseCard({ course }) {
         width,
         marginVertical: 10,
         borderRadius: 25,
+        marginRight: 20,
       }}
     >
       <View
@@ -54,6 +55,7 @@ export default function CourseCard({ course }) {
             padding: 5,
             height: 40,
             borderBottomLeftRadius: 20,
+            borderTopRightRadius: 20,
             marginTop: -10,
             marginRight: -10,
             justifyContent: "center",

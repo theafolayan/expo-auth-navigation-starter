@@ -1,11 +1,19 @@
 import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 import { useAuth } from "../../../contexts/Auth";
 import Constants from "expo-constants";
 import AppText from "../../../components/AppText";
 import CourseCard from "../../../components/lms/CourseCard";
 import colors from "../../../constants/colors";
+import FeaturedCourse from "../../../components/lms/FeaturedCourse";
 
 const courses = [
   {
@@ -70,23 +78,45 @@ m hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias 
   },
 ];
 export default function CourseHome() {
-  const auth = useAuth();
-  const signOut = () => {
-    auth.signOut();
+  const renderItem = ({ item }) => {
+    return <CourseCard course={item} />;
   };
-  return (
-    <View style={styles.container}>
-      <AppText bold dark>
-        Assigned Tasks
-      </AppText>
 
-      <View style={styles.wrap}>
-        {courses.map((course) => {
-          return <CourseCard key={course.id} course={course} />;
-        })}
-      </View>
-      <Button title="Sign Out" onPress={signOut} />
-    </View>
+  return (
+    <FlatList
+      numColumns={2}
+      style={styles.container}
+      data={courses}
+      ListHeaderComponent={
+        <View>
+          <AppText bold dark medium>
+            Featured courses
+          </AppText>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginBottom: 10,
+              }}
+            >
+              {courses.map((course, index) => {
+                return (
+                  <FeaturedCourse
+                    key={course.id}
+                    course={course}
+                    index={index}
+                  />
+                );
+              })}
+            </View>
+          </ScrollView>
+          <AppText bold dark medium>
+            Featured courses
+          </AppText>
+        </View>
+      }
+      renderItem={renderItem}
+    />
   );
 }
 
