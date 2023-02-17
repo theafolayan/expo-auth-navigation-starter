@@ -13,7 +13,8 @@ export const AppStack = () => {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="HomeScreen" component={BottomTabs} />
+      <Stack.Screen name="HOMESCREEN" component={BottomTabs} />
+      {/* <Stack.Screen name="HOMESCREEN" component={BottomTabs} /> */}
     </Stack.Navigator>
   );
 };

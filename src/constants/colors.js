@@ -7,7 +7,7 @@ const colors = {
   lightRed: "#FF848480",
   orange: "orange",
   yellow: "#FED325",
-  lightYellow: "#FFEFAD",
+  lightYellow: "#FFE9CE",
   chatYellow: "#FFF4C6",
   light: "#F1F1F1",
   green: "#57E69E",

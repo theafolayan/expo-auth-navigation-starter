@@ -6,7 +6,6 @@ import Constants from "expo-constants";
 import AppText from "../../components/AppText";
 import WalletBalance from "../../components/home/WalletBalance";
 import Greeting from "../../components/home/Greeting";
-import colors from "../../constants/colors";
 
 export default function HomeScreen() {
   const auth = useAuth();
@@ -34,6 +33,6 @@ const styles = StyleSheet.create({
     // justifyContent: "center",
     paddingHorizontal: 20,
     // alignItems: "center",
-    backgroundColor: colors.white,
+    // backgroundColor: colors.white,
   },
 });

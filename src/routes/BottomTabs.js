@@ -1,8 +1,10 @@
 import { FontAwesome, Feather, Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
+import { StyleSheet } from "react-native";
 import colors from "../constants/colors";
 import HomeScreen from "../screens/auth/HomeScreen";
+import CourseHome from "../screens/auth/lms/CourseHome";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -15,6 +17,21 @@ export function BottomTabs() {
       screenOptions={{
         tabBarActiveTintColor: colors.primary,
         headerShown: false,
+        tabBarStyle: {
+          position: "absolute",
+          bottom: 25,
+          left: 20,
+          right: 20,
+          elevation: 0,
+          backgroundColor: colors.white,
+          borderRadius: 20,
+          paddingTop: 10,
+          paddingBottom: 10,
+
+          //   justifyContent: "center",
+          //   alignItems: "center",
+          //   height: 90,
+        },
       }}
     >
       {/* <BottomTab.Screen
@@ -49,7 +66,7 @@ export function BottomTabs() {
       />
       <BottomTab.Screen
         name="Learn"
-        component={HomeScreen}
+        component={CourseHome}
         options={{
           title: "Learn",
           tabBarIcon: ({ color }) => (
@@ -90,3 +107,7 @@ export function BottomTabs() {
 function TabBarIcon(props) {
   return <Ionicons size={25} style={{ marginBottom: 2 }} {...props} />;
 }
+
+const styles = StyleSheet.create({
+  shadow: {},
+});
