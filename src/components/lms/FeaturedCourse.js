@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, Dimensions, TouchableOpacity } from "react-native";
+import { View, Image, Dimensions, TouchableOpacity } from "react-native";
 import colors from "../../constants/colors";
 import { capitalizeString } from "../../utils/transforms";
 import AppText from "../AppText";
@@ -37,10 +37,14 @@ export default function FeaturedCourse({ course }) {
         }}
       >
         <View>
-          <AppText white>11 Videos</AppText>
+          <AppText white bold light>
+            11 Videos
+          </AppText>
         </View>
         <View>
-          <AppText white>11 tasks</AppText>
+          <AppText white bold light>
+            11 Tasks
+          </AppText>
         </View>
       </View>
     </TouchableOpacity>

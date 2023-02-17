@@ -13,6 +13,7 @@ export default function AppText({
   medium,
   title,
   yellow,
+  light,
   centered,
   small,
   red,
@@ -49,6 +50,7 @@ export default function AppText({
           right && styles.right,
           left && styles.left,
           italic && styles.italic,
+          light && styles.light,
           style,
           size && { fontSize: size },
         ]}
@@ -96,6 +98,9 @@ const styles = StyleSheet.create({
   },
   white: {
     color: colors.white,
+  },
+  light: {
+    color: colors.chatYellow,
   },
   grey: { color: colors.light },
 
