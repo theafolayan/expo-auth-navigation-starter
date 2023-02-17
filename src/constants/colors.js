@@ -17,7 +17,7 @@ const colors = {
   black: "#000",
   lightPurple: "#DFE2FF",
   grey: "grey",
-  grey200: "#EAECF0",
+  grey200: "#F1F6FB",
   grey300: "#D0D5DD",
   grey500: "#667085",
 };

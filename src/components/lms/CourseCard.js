@@ -1,20 +1,20 @@
-import React, { Component } from "react";
-import { View, Text, Image, Dimensions } from "react-native";
+import React from "react";
+import { View, Text, Image, Dimensions, TouchableOpacity } from "react-native";
 import colors from "../../constants/colors";
 import { capitalizeString } from "../../utils/transforms";
 import AppText from "../AppText";
 const width = Dimensions.get("screen").width / 2.39;
 
 export default function CourseCard({ course }) {
-  console.log(course);
   return (
-    <View
+    <TouchableOpacity
       style={{
         backgroundColor: colors.grey200,
         padding: 10,
+        paddingBottom: 30,
         width,
         marginVertical: 10,
-        borderRadius: 20,
+        borderRadius: 25,
       }}
     >
       <View
@@ -26,12 +26,14 @@ export default function CourseCard({ course }) {
         <View
           style={{
             backgroundColor: colors.white,
-            width: 40,
-            height: 40,
+            marginTop: 10,
+            width: 45,
+            height: 45,
             borderRadius: 25,
             justifyContent: "center",
             alignContent: "center",
             marginBottom: 10,
+            marginLeft: 10,
           }}
         >
           <Image
@@ -50,6 +52,11 @@ export default function CourseCard({ course }) {
           style={{
             backgroundColor: colors.lightYellow,
             padding: 5,
+            height: 40,
+            borderBottomLeftRadius: 20,
+            marginTop: -10,
+            marginRight: -10,
+            justifyContent: "center",
           }}
         >
           <AppText bold small dark>
@@ -58,8 +65,8 @@ export default function CourseCard({ course }) {
         </View>
       </View>
       <AppText dark bold>
-        {course.title}
+        {capitalizeString(course.title)}
       </AppText>
-    </View>
+    </TouchableOpacity>
   );
 }

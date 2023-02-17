@@ -5,6 +5,7 @@ import { useAuth } from "../../../contexts/Auth";
 import Constants from "expo-constants";
 import AppText from "../../../components/AppText";
 import CourseCard from "../../../components/lms/CourseCard";
+import colors from "../../../constants/colors";
 
 const courses = [
   {
@@ -94,6 +95,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Constants.statusBarHeight,
     paddingHorizontal: 20,
+    backgroundColor: colors.white,
   },
   wrap: {
     flexDirection: "row",

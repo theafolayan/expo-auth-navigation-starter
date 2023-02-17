@@ -25,8 +25,9 @@ export function BottomTabs() {
           elevation: 0,
           backgroundColor: colors.white,
           borderRadius: 20,
-          paddingTop: 10,
-          paddingBottom: 10,
+          paddingTop: 5,
+          paddingBottom: 5,
+          height: 70,
 
           //   justifyContent: "center",
           //   alignItems: "center",
@@ -61,7 +62,9 @@ export function BottomTabs() {
         component={HomeScreen}
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="home-outline" color={color} />
+          ),
         }}
       />
       <BottomTab.Screen
@@ -89,7 +92,9 @@ export function BottomTabs() {
         component={HomeScreen}
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="person-outline" color={color} />
+          ),
         }}
       />
     </BottomTab.Navigator>
