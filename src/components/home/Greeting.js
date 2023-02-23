@@ -8,6 +8,7 @@ import AppText from "../AppText";
 
 export default function Greeting() {
   const auth = useAuth();
+
   return (
     <View style={styles.container}>
       <AppText bold big dark>

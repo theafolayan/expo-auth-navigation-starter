@@ -14,6 +14,7 @@ import AppText from "../../../components/AppText";
 import CourseCard from "../../../components/lms/CourseCard";
 import colors from "../../../constants/colors";
 import FeaturedCourse from "../../../components/lms/FeaturedCourse";
+import SearchBox from "../../../components/forms/SearchBox";
 
 const courses = [
   {
@@ -89,6 +90,7 @@ export default function CourseHome() {
       data={courses}
       ListHeaderComponent={
         <View>
+          <SearchBox />
           <AppText bold dark medium>
             Featured courses
           </AppText>
