@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
-import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import colors from "../../constants/colors";
 import { useAuth } from "../../contexts/Auth";
 import AppText from "../AppText";
 
 export default function Greeting() {
   const auth = useAuth();
-
-  console.log(auth);
   return (
     <View style={styles.container}>
       <AppText bold big dark>
-        Hi {auth.authData.user.firstname}!
+        Hi {auth?.authData?.user?.firstname}!
       </AppText>
       <View style={{ flexDirection: "row" }}>
         <TouchableOpacity style={styles.xp}>

@@ -18,14 +18,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentified": "com.gerbambi.bambi",
+      "bundleIdentifier": "com.bambi.bambi"
     },
     "android": {
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.bambi.bambi"
     },
     "extra": {
       "eas": {
