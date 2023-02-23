@@ -5,6 +5,7 @@ import { StyleSheet } from "react-native";
 import colors from "../constants/colors";
 import HomeScreen from "../screens/auth/HomeScreen";
 import CourseHome from "../screens/auth/lms/CourseHome";
+import ProfileHome from "../screens/auth/profile/ProfileHome";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -89,7 +90,7 @@ export function BottomTabs() {
       />
       <BottomTab.Screen
         name="Profile"
-        component={HomeScreen}
+        component={ProfileHome}
         options={{
           title: "Profile",
           tabBarIcon: ({ color }) => (

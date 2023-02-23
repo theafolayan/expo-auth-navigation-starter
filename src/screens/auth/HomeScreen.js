@@ -8,10 +8,6 @@ import WalletBalance from "../../components/home/WalletBalance";
 import Greeting from "../../components/home/Greeting";
 
 export default function HomeScreen() {
-  const auth = useAuth();
-  const signOut = () => {
-    auth.signOut();
-  };
   return (
     <View style={styles.container}>
       <Greeting />
@@ -21,7 +17,6 @@ export default function HomeScreen() {
       </AppText>
 
       <Text>HOME SCREEN</Text>
-      <Button title="Sign Out" onPress={signOut} />
     </View>
   );
 }
